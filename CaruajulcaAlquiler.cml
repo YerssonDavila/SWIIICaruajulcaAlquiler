@@ -1,0 +1,62 @@
+ContextMap CaruajulcaAlquiler{
+contains GestionarAlquileresContext
+contains reservas
+contains EstadoVehiculo
+contains contratoAlquiler
+
+contains GestionarClientesContext
+contains usuarioCliente
+
+contains GestionarVehiculosContext
+contains caracteristicasAuto
+contains disponibilidadAuto
+contains RastreoAuto
+
+
+contains gestionarPagosContext
+contains validarpago
+
+contains SeguridadContext
+
+GestionarAlquileresContext [D]<- [U]reservas
+GestionarAlquileresContext [D]<- [U]EstadoVehiculo
+GestionarAlquileresContext [D]<- [U]contratoAlquiler
+
+GestionarClientesContext [D]<- [U]usuarioCliente
+
+GestionarVehiculosContext [D]<- [U] caracteristicasAuto
+GestionarVehiculosContext [D]<- [U] disponibilidadAuto
+GestionarVehiculosContext [D]<- [U] RastreoAuto
+
+gestionarPagosContext [D]<- [U] validarpago
+
+//RELACIONES ENTRE BOUNDED CONTEXT
+GestionarAlquileresContext [SK]<->[SK] GestionarVehiculosContext
+GestionarAlquileresContext [SK]<->[SK] GestionarClientesContext
+GestionarVehiculosContext [SK]<->[SK] GestionarClientesContext
+
+//relaciones especificas: 
+usuarioCliente [D] <- [U] disponibilidadAuto
+contratoAlquiler [D] <- [U] disponibilidadAuto
+reservas [D] <- [U]  contratoAlquiler
+
+SeguridadContext [U]-> [D] validarpago
+SeguridadContext [SK]<->[SK] GestionarVehiculosContext
+
+
+}
+BoundedContext GestionarReservasContext
+BoundedContext GestionarClientesContext
+BoundedContext EstadoVehiculosContext
+BoundedContext gestionarPagosContext
+BoundedContext GestionarAlquileresContext
+BoundedContext GestionarVehiculosContext
+BoundedContext reservas
+BoundedContext EstadoVehiculo
+BoundedContext contratoAlquiler
+BoundedContext usuarioCliente
+BoundedContext caracteristicasAuto
+BoundedContext disponibilidadAuto
+BoundedContext RastreoAuto
+BoundedContext validarpago
+BoundedContext SeguridadContext

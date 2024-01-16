@@ -1,0 +1,80 @@
+digraph "ContextMapGraph" {
+graph ["imagepath"="/tmp/GraphvizJava"]
+"EstadoVehiculo" ["margin"="0.3","orientation"="162","shape"="egg","fontsize"="16","style"="bold","label"="EstadoVehiculo\n","fontname"="sans-serif"]
+"GestionarAlquileresContext" ["margin"="0.3","orientation"="84","shape"="egg","fontsize"="16","style"="bold","label"="GestionarAlquileresContext\n","fontname"="sans-serif"]
+"GestionarClientesContext" ["margin"="0.3","orientation"="309","shape"="egg","fontsize"="16","style"="bold","label"="GestionarClientesContext\n","fontname"="sans-serif"]
+"GestionarVehiculosContext" ["margin"="0.3","orientation"="108","shape"="egg","fontsize"="16","style"="bold","label"="GestionarVehiculosContext\n","fontname"="sans-serif"]
+"RastreoAuto" ["margin"="0.3","orientation"="86","shape"="egg","fontsize"="16","style"="bold","label"="RastreoAuto\n","fontname"="sans-serif"]
+"SeguridadContext" ["margin"="0.3","orientation"="121","shape"="egg","fontsize"="16","style"="bold","label"="SeguridadContext\n","fontname"="sans-serif"]
+"validarpago" ["margin"="0.3","orientation"="186","shape"="egg","fontsize"="16","style"="bold","label"="validarpago\n","fontname"="sans-serif"]
+"gestionarPagosContext" ["margin"="0.3","orientation"="312","shape"="egg","fontsize"="16","style"="bold","label"="gestionarPagosContext\n","fontname"="sans-serif"]
+"caracteristicasAuto" ["margin"="0.3","orientation"="311","shape"="egg","fontsize"="16","style"="bold","label"="caracteristicasAuto\n","fontname"="sans-serif"]
+"contratoAlquiler" ["margin"="0.3","orientation"="27","shape"="egg","fontsize"="16","style"="bold","label"="contratoAlquiler\n","fontname"="sans-serif"]
+"reservas" ["margin"="0.3","orientation"="252","shape"="egg","fontsize"="16","style"="bold","label"="reservas\n","fontname"="sans-serif"]
+"disponibilidadAuto" ["margin"="0.3","orientation"="290","shape"="egg","fontsize"="16","style"="bold","label"="disponibilidadAuto\n","fontname"="sans-serif"]
+"usuarioCliente" ["margin"="0.3","orientation"="9","shape"="egg","fontsize"="16","style"="bold","label"="usuarioCliente\n","fontname"="sans-serif"]
+"EstadoVehiculo" -> "GestionarAlquileresContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"GestionarAlquileresContext" -> "GestionarClientesContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"GestionarAlquileresContext" -> "GestionarVehiculosContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"GestionarVehiculosContext" -> "GestionarClientesContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"RastreoAuto" -> "GestionarVehiculosContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"SeguridadContext" -> "validarpago" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"SeguridadContext" -> "GestionarVehiculosContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"validarpago" -> "gestionarPagosContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"caracteristicasAuto" -> "GestionarVehiculosContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"contratoAlquiler" -> "reservas" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"contratoAlquiler" -> "GestionarAlquileresContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"reservas" -> "GestionarAlquileresContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"disponibilidadAuto" -> "GestionarVehiculosContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"disponibilidadAuto" -> "usuarioCliente" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"disponibilidadAuto" -> "contratoAlquiler" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"usuarioCliente" -> "GestionarClientesContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+}
